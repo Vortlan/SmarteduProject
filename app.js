@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const pageRoute = require('./routes/pageRoutes');
 const courseRoute = require('./routes/courseRoutes');
+const { use } = require('./routes/courseRoutes');
 
 const app = express();
 
@@ -12,6 +13,8 @@ mongoose.connect('mongodb://localhost/smartedu-db').then(() => {
 
 //Template Engine
 app.set('view engine', 'ejs');
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 //Middlewares
 app.use(express.static('public'));
