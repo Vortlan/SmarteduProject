@@ -6,7 +6,7 @@ const courseRoute = require('./routes/courseRoutes');
 const app = express();
 
 //Connect DB
-mongoose.connect('mongoose://localhost/smartedu-db').then(() => {
+mongoose.connect('mongodb://localhost/smartedu-db').then(() => {
   console.log('DB connect Successfuly');
 });
 
